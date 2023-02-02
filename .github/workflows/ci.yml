@@ -6,8 +6,8 @@ env:
   RUSTFLAGS: -Dwarnings
 
 jobs:
-  build-test:
-    name: Build and test
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,8 +18,8 @@ jobs:
         run: cargo clippy
       - name: Run cargo test
         run: cargo test
-  build-release:
-    name: Build for release
+  build:
+    name: Build
     strategy:
       matrix:
         rust: [1.67.0, stable]
