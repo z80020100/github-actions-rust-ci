@@ -50,7 +50,5 @@ jobs:
         run: sudo apt install -y libudev-dev
       - name: Update toolchain
         run: rustup update --no-self-update ${{ matrix.rust }} && rustup default ${{ matrix.rust }}
-      - name: Install dependencies on Ubuntu
-        run: sudo apt install libudev-dev
       - name: Run cargo build --release
         run: cargo build --release
